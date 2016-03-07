@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form action="" method=post>Add New Book
+
+    <hr>
+
+            <div class="control-group">
+                <div class="controls">
+                    <input
+                        type="text"
+                        name="title"
+                        maxlength="60"
+                        class="form-control input-xlarge"
+                        placeholder="Title"
+                        {% if book is defined -%}
+                            value="{{ book.title }}"
+                        {% endif -%}
+                        required
+                      />
+                </div>
+            </div>
+        <hr>
+
+            <div class="control-group">
+                <div class="controls">
+                    <input
+                        type="text"
+                        name="author"
+                        maxlength="60"
+                        class="form-control input-xlarge"
+                        placeholder="Author"
+                        {% if book is defined -%}
+                            value="{{ book.author }}"
+                        {% endif -%}
+                        required
+                      />
+                </div>
+            </div>
+        <hr>
+
+
+        <div class="control-group">
+                <div class="controls">
+                    <input
+                        type="text"
+                        name="category"
+                        maxlength="60"
+                        class="form-control input-xlarge"
+                        placeholder="Category"
+                        {% if book is defined -%}
+                            value="{{ book.category }}"
+                        {% endif -%}
+                        required
+                      />
+                </div>
+            </div>
+        <hr>
+
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success">Add Book</button>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}

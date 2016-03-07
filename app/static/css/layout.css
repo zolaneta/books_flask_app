@@ -1,0 +1,26 @@
+.main{
+    background-color: #f0f1fd;
+    width: 900px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
+
+#first_column{
+    padding-right: 5px;
+     width: 30px;
+}
+#second_column {
+    padding-right: 5px;
+    width: 400px;
+}
+#third_column{
+    padding-right: 5px;
+    width: 200px;
+}
+#forth_column {
+    padding-right: 5px;
+    width: 200px;
+}

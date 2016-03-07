@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h3>Books Books Books</h3>
+<div class="main">
+
+
+    <h3>List of our books</h3>
+       <table>
+           <tr>
+               <th>#</th>
+               <th>Title</th>
+               <th>Author</th>
+               <th>Category</th>
+           </tr>
+           {% for book in books %}
+               <tr>
+                   <td id ="first_column">{{ loop.index }} </td>
+                   <td id ="second_column">{{ book.title }}</td>
+                   <td id ="third_column">{{ book.author }}</td>
+                   <td id ="forth_column">{{ book.category }}</td>
+
+               </tr>
+           {% endfor %}
+       </table>
+        </div>
+</div>
+
+        {% endblock %}
