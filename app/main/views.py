@@ -1,8 +1,10 @@
-from flask import render_template, url_for, redirect, request, flash
+from flask import render_template, url_for, redirect, request
 
 from app import app
 from app.models import Book, User, db
-from forms import RegistrationForm
+from forms import RegistrationForm, LoginForm, SubmitField
+from flask.ext.login import current_user, logout_user, flash, login_user
+
 
 
 
@@ -32,7 +34,7 @@ def new_book():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm(request.form)
-    if request.method == 'POST' and form.validate():
+    if request.method == 'POST':
         user = User(username=form.username.data, email=form.email.data,
                     password=form.password.data)
         db.session.add(user)
@@ -44,6 +46,26 @@ def register():
     return render_template('register.html', form=form)
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    print "1"
+    if request.method == 'POST':
+        print "2"
+       # if form.validate_on_submit():
+        print "3"
+        user = User.query.filter_by(username=form.username.data).first()
+        if user is not None and user.verify_password(form.password.data):
+            print "5"
+            login_user(user)
+            print (user)
+            return redirect(url_for('list_all'))
+
+
+        else:
+            flash('Invalid username or password.')
+
+    return render_template('login.html', form=form)
 
 
 
