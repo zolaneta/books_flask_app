@@ -2,10 +2,10 @@
 
 {% block content %}
 <h3>Books Books Books</h3>
+    <h3>List of our books</h3>
 <div class="main">
 
-
-    <h3>List of our books</h3>
+    <div class="list">
        <table>
            <tr>
                <th>#</th>
@@ -22,8 +22,24 @@
 
                </tr>
            {% endfor %}
-       </table>
-        </div>
+        </table>
+    </div>
+
+
+    <div class="side_bar">
+    <h4>BROWSE BY CATEGORIES</h4>
+        <table>
+
+           {% for book in books %}
+               <tr>
+                   <td id ="forth_column">{{ book.category }}</td>
+
+               </tr>
+           {% endfor %}
+        </table>
+    </div>
 </div>
+
+
 
         {% endblock %}
