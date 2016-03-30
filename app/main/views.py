@@ -49,21 +49,21 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    print "1"
+    print '1'
     if request.method == 'POST':
-        print "2"
-       # if form.validate_on_submit():
-        print "3"
-        user = User.query.filter_by(username=form.username.data).first()
-        if user is not None and user.verify_password(form.password.data):
-            print "5"
-            login_user(user)
-            print (user)
-            return redirect(url_for('list_all'))
+        print '2'
+        if form.validate_on_submit():
+            print '3'
+            user = User.query.filter_by(username=form.username.data).first()
+            if user is not None and user.verify_password(form.password.data):
+                login_user(user)
+                print (user)
+                return redirect(url_for('list_all'))
 
-
-        else:
             flash('Invalid username or password.')
+        else:
+            flash('Failed validation')
+
 
     return render_template('login.html', form=form)
 

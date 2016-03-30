@@ -1,4 +1,7 @@
 .main{
+    display: flex;}
+
+.list{
     background-color: #f0f1fd;
     width: 900px;
     border: 1px solid lightgray;
