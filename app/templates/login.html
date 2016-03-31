@@ -1,16 +1,16 @@
 {% extends "layout.html" %}
-{% from "_formhelpers.html" import render_field %}
+
 
 {% block content %}
-
+{% from "_formhelpers.html" import render_field %}
 <div id="loginwindow">
 
-<form method="post" action="login">Please Log In
+<form method="post" action="/login">Please Log In
   <dl>
 
 
     {{ render_field(form.username, autocomplete="off") }}
-    {{ render_field(form.password, autocomplete="off") }}
+    {{ render_field(form.password_hash, autocomplete="off") }}
 
   </dl>
 <p><input type="submit" value="Log In">

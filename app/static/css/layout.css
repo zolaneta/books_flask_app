@@ -1,5 +1,6 @@
 .main{
-    display: flex;}
+    display: flex;
+}
 
 .list{
     background-color: #f0f1fd;
@@ -26,4 +27,9 @@
 #forth_column {
     padding-right: 5px;
     width: 200px;
+}
+
+.side_bar{
+      padding-left: 35px;
+
 }

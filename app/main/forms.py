@@ -6,10 +6,10 @@ from flask.ext.wtf import Form
 
 
 class RegistrationForm(Form):
-    username = TextField('Username', [validators.Length(min=4, max=25)])
-    email = TextField('Email Address', [validators.Length(min=6, max=35)])
+    username = StringField('Username', [validators.Length(min=4, max=25)])
+    email = StringField('Email Address', [validators.Length(min=6, max=35)])
     password = PasswordField('New Password', [
-        validators.Required(),
+        validators.DataRequired(),
         validators.EqualTo('confirm', message='Passwords must match')
     ])
     confirm = PasswordField('Repeat Password')
@@ -20,7 +20,7 @@ class LoginForm(Form):
         DataRequired(), Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
                                           'Usernames must have only letters, '
                                           'numbers, dots or underscores')], description="test")
-    password = PasswordField('password', validators=[DataRequired()])
+    password_hash = PasswordField('password', validators=[DataRequired()])
 
     submit = SubmitField('Login')
 
@@ -29,10 +29,13 @@ class LoginForm(Form):
 
     def validate(self):
         if not Form.validate(self):
-            return False
-
+            print "at validate"
+            return True
+        print "YESSS"
         user = User.query.filter_by(username=self.username.data.lower()).first()
-        if user and user.verify_password(self.password.data):
+        print "We are getting there"
+        if user and user.verify_password(self.password_hash.data):
+            print "hello world"
             return True
 
         else:

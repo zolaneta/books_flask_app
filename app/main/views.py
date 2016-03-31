@@ -16,6 +16,16 @@ def list_all():
     )
 
 
+@app.route('/')
+def list_categories():
+    categories = Book.query.all()
+
+    return render_template(
+        'list.html',
+        categories=categories
+    )
+
+
 @app.route('/new-book', methods=['GET', 'POST'])
 def new_book():
     if request.method == 'POST':
@@ -55,7 +65,7 @@ def login():
         if form.validate_on_submit():
             print '3'
             user = User.query.filter_by(username=form.username.data).first()
-            if user is not None and user.verify_password(form.password.data):
+            if user is not None and user.verify_password(form.password_hash.data):
                 login_user(user)
                 print (user)
                 return redirect(url_for('list_all'))
