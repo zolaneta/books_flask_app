@@ -1,5 +1,6 @@
 .main{
     display: flex;
+    height: 1000px;
 }
 
 .list{
@@ -18,7 +19,7 @@
 }
 #second_column {
     padding-right: 5px;
-    width: 400px;
+    width: 550px;
 }
 #third_column{
     padding-right: 5px;
@@ -33,3 +34,13 @@
       padding-left: 35px;
 
 }
+footer{
+    height: 25px;
+    padding-top: 15px;
+    color: grey;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+
