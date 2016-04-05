@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h4>BROWSE BY CATEGORIES</h4>
+        <table>
+
+           {% for item in categories %}
+               <tr>
+                  <td> {{ item.category }} </td>
+
+               </tr>
+           {% endfor %}
+        </table>
+
+
+
+        {% endblock %}

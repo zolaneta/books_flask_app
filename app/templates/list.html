@@ -27,10 +27,10 @@
 
 
     <div class="side_bar">
-    <h4>BROWSE BY CATEGORIES</h4>
+    <h4><a href="/categories">BROWSE BY CATEGORIES</a></h4>
         <table>
 
-           {% for category in categories %}
+           {% for book in books %}
                <tr>
                   <td id ="last_column">{{ book.category }}</td>
 

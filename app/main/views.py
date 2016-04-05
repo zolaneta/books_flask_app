@@ -12,17 +12,15 @@ from flask.ext.login import current_user, logout_user, flash, login_user
 def list_all():
     return render_template(
         'list.html',
-        books=Book.query.all()
+        books=Book.query.all(),
     )
 
 
-@app.route('/')
+@app.route('/categories')
 def list_categories():
-    categories = Book.query.all()
-
     return render_template(
-        'list.html',
-        categories=categories
+        'category.html',
+        categories=Book.query.distinct(Book.category).group_by(Book.category)
     )
 
 
