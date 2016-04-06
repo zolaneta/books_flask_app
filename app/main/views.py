@@ -17,6 +17,15 @@ def list_all():
     )
 
 
+@app.route('/category/')
+@app.route('/category/<category>')
+def category(category=None):
+    return render_template(
+        'category.html', category=category
+
+    )
+
+
 @app.route('/new-book', methods=['GET', 'POST'])
 def new_book():
     if request.method == 'POST':

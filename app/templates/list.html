@@ -32,8 +32,11 @@
 
            {% for item in categories %}
                <tr>
-                  <td> {{ item.category }} </td>
-
+               {% if item.category %}
+                  <td><a href="/category/<category>"> {{ item.category }} </a> </td>
+                {% else %}
+                <h1>Make a new html for it!</h1>
+               {% endif %}
                </tr>
            {% endfor %}
         </table>
