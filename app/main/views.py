@@ -13,13 +13,6 @@ def list_all():
     return render_template(
         'list.html',
         books=Book.query.all(),
-    )
-
-
-@app.route('/categories')
-def list_categories():
-    return render_template(
-        'category.html',
         categories=Book.query.distinct(Book.category).group_by(Book.category)
     )
 

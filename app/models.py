@@ -8,9 +8,9 @@ from flask import current_app
 class Book(db.Model):
     __tablename__ = "books"
     id = db.Column('id', db.Integer, primary_key=True)
-    title = db.Column(db.String(64))
-    author = db.Column(db.String(64))
-    category = db.Column(db.String(64))
+    title = db.Column(db.String(128))
+    author = db.Column(db.String(128))
+    category = db.Column(db.String(128))
 
 
 class User(UserMixin, db.Model):
