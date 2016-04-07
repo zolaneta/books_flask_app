@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Category</title>
-</head>
-<body>
-category
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block content %}
+<h3>category {{ category }}</h3>
+    <h3>List of our {{ category }} books</h3>
+<div class="main">
+
+    <div class="list">
+       <table>
+           <tr>
+               <th>#</th>
+               <th>Title</th>
+               <th>Author</th>
+               <th>Category</th>
+           </tr>
+           {% for item in category_list %}
+               <tr>
+                   <td id ="first_column">{{ loop.index }} </td>
+                   <td id ="second_column">{{ item.title }}</td>
+                   <td id ="third_column">{{ item.author }}</td>
+                   <td id ="forth_column">{{ item.category }}</td>
+
+               </tr>
+           {% endfor %}
+        </table>
+    </div>
+
+
+    <div class="side_bar">
+        <h4>BROWSE BY CATEGORIES</h4>
+        <table>
+
+           {% for item in categories %}
+               <tr>
+
+                  <td><a href=/category/{{ item.category }}> {{ item.category }} </a> </td>
+
+               </tr>
+           {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+
+        {% endblock %}

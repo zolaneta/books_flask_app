@@ -21,7 +21,11 @@ def list_all():
 @app.route('/category/<category>')
 def category(category=None):
     return render_template(
-        'category.html', category=category
+        'category.html',
+        category=category,
+        books=Book.query.all(),
+        categories=Book.query.distinct(Book.category).group_by(Book.category),
+        category_list=Book.query.filter_by(category=category).all()  # grabs <category>
 
     )
 
