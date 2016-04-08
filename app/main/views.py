@@ -38,6 +38,7 @@ def book(id=None):
         id=id,
         books=Book.query.all(),
         categories=Book.query.distinct(Book.category).group_by(Book.category),
+        # Query for specific book id
         specific_book=Book.query.filter_by(id=id).first()
     )
 

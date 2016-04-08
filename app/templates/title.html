@@ -1,22 +1,22 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<h3>Books Books Books </h3>
 
-<div class="main">
+    <h3>Reading great books makes your brain sharp.</h3>
 
-     <div class="list">
-         <h3>ID{{ specific_book.id}}</h3>
-               <tr>
 
-                   <td id ="second_column">{{ specific_book.title }}</td>
-                   <td id ="third_column">{{ specific_book.author }}</td>
-                   <td id ="forth_column">{{ specific_book.category }}</td>
+         <table>
+            <tr>
 
-               </tr>
+                   <td id ="picture"><img src="http://ecx.images-amazon.com/images/I/71zEnaWFq7L.jpg"/></td>
+                   <td id ="title">{{ specific_book.title }}</td>
+                   <td id ="author">by {{ specific_book.author }}</td>
+
+            </tr>
+
 
         </table>
-    </div>
+
 
 
     <div class="side_bar">
@@ -32,7 +32,7 @@
            {% endfor %}
         </table>
     </div>
-</div>
+
 
 
 

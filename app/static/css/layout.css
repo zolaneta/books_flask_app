@@ -1,6 +1,6 @@
 .main{
     display: flex;
-    height: 1000px;
+    height: 700px;
 }
 
 .list{
@@ -43,4 +43,15 @@ footer{
     margin-bottom: 20px;
 }
 
+img{
+    width: 200px;
+    height: auto;
+}
+
+#title{
+    font-size: 20px;
+    color: darkred;
+    padding-left: 10px;
+
+}
 
