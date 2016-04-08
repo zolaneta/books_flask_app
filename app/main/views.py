@@ -31,16 +31,14 @@ def category(category=None):
     )
 
 @app.route('/title')
-@app.route('/title/<title>')
-def book(title=None):
-
+@app.route('/title/<id>', methods=['GET', 'POST'])
+def book(id=None):
     return render_template(
         'title.html',
-
-        title=title,
+        id=id,
         books=Book.query.all(),
         categories=Book.query.distinct(Book.category).group_by(Book.category),
-        specific_book=Book.query.filter_by(title=title).first()
+        specific_book=Book.query.filter_by(id=id).first()
     )
 
 

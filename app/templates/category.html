@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<h3>category {{ category }}</h3>
+<h3>category {{ category}}</h3>
     <h3>List of our {{ category }} books</h3>
 <div class="main">
 
@@ -16,7 +16,7 @@
            {% for item in category_list %}
                <tr>
                    <td id ="first_column">{{ loop.index }} </td>
-                   <td id ="second_column"><a href=/title>{{ item.title }}</a></td>
+                   <td id ="second_column"><a href=/title/{{ item.id }}e>{{ item.title }}</a></td>
                    <td id ="third_column">{{ item.author }}</td>
                    <td id ="forth_column">{{ item.category }}</td>
 
