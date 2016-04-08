@@ -1,22 +1,23 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<h3>Books Books Books</h3>
-    <h3>List of our books</h3>
+<h3>Books Books Books  {{ specific_book }}</h3>
+    <h3>List of our books{{ title }}</h3>
 <div class="main">
 
     <div class="list">
        <table>
+       <p>{{ title }}</p>
            <tr>
                <th>#</th>
                <th>Title</th>
                <th>Author</th>
                <th>Category</th>
            </tr>
-           {% for book in books %}
+           {% for item  in books %}
                <tr>
                    <td id ="first_column">{{ loop.index }} </td>
-                   <td id ="second_column"><a href=/title/{{ book.title }}/>{{ book.title }}</a></td>
+                   <td id ="second_column"><a href=/title>{{ book.title }}</a></td>
                    <td id ="third_column">{{ book.author }}</td>
                    <td id ="forth_column">{{ book.category }}</td>
 

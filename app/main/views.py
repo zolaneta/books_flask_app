@@ -22,12 +22,27 @@ def list_all():
 def category(category=None):
     return render_template(
         'category.html',
-        category=category,
+        category=category, # goes into {{category}}
+        #books=Book.query.all(),
+        # Query for list of categories (BROWSE BY CATEGORIES)
+        categories=Book.query.distinct(Book.category).group_by(Book.category),
+        # Query for list of books in specific categories
+        category_list=Book.query.filter_by(category=category).all()  # grabs <category>
+    )
+
+@app.route('/title')
+@app.route('/title/<title>')
+def book(title=None):
+
+    return render_template(
+        'title.html',
+
+        title=title,
         books=Book.query.all(),
         categories=Book.query.distinct(Book.category).group_by(Book.category),
-        category_list=Book.query.filter_by(category=category).all()  # grabs <category>
-
+        specific_book=Book.query.filter_by(title=title).first()
     )
+
 
 
 @app.route('/new-book', methods=['GET', 'POST'])
@@ -41,7 +56,7 @@ def new_book():
         return render_template(
             'new-book.html',
             page='new-book.html',
-            books=Book.query.all(),
+            books=Book.query.all()
         )
 
 
