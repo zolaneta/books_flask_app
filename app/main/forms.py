@@ -1,4 +1,4 @@
-from wtforms import Form, TextField, PasswordField, validators, SubmitField, StringField
+from wtforms import Form, TextField, PasswordField, validators, SubmitField, StringField, FileField
 from wtforms.validators import DataRequired, Length,  Regexp, EqualTo
 from wtforms import ValidationError, validators, SubmitField
 from views import User
@@ -41,4 +41,7 @@ class LoginForm(Form):
         else:
             self.username.errors.append("Invalid username or password")
             return False
+
+class ImageForm(Form):
+    file = FileField('Image file')
 
