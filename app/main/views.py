@@ -1,9 +1,30 @@
-from flask import render_template, url_for, redirect, request
+import os
+from flask import render_template, url_for, redirect, request, flash
+from werkzeug.utils import secure_filename
 
 from app import app
 from app.models import Book, User, db
-from forms import RegistrationForm, LoginForm, SubmitField
-from flask.ext.login import current_user, logout_user, flash, login_user
+from forms import RegistrationForm, LoginForm, SubmitField, ImageForm
+from flask.ext.login import current_user, logout_user, login_user
+
+
+
+@app.route('/image-upload/', methods=['GET', 'POST'])
+def image_upload():
+    if request.method == 'POST':
+        form = ImageForm(request.form)
+        if form.validate():
+            image_file = request.files['file']
+
+            filename = os.path.join(app.config['IMAGES_DIR'], secure_filename(image_file.filename))
+            image_file.save(filename)
+            flash('Saved %s' % os.path.basename(filename), 'success')
+            return redirect(url_for('entries.index'))
+        else:
+            form = ImageForm()
+        return render_template('entries/image_upload.html', form=form)
+
+
 
 
 

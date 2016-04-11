@@ -10,3 +10,10 @@ SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
+
+
+
+
+class Configuration(object):
+    STATIC_DIR = os.path.join(basedir, 'static')
+    IMAGES_DIR = os.path.join(STATIC_DIR, 'images')

@@ -12,7 +12,7 @@ body {
 
 .main{
     display: flex;
-     height: 800px;
+    height: 800px;
     position:relative;
 }
 
@@ -49,9 +49,9 @@ body {
 }
 
 #body {
-    height: 1000px;
-   padding:10px;
-   padding-bottom:60px;   /* Height of the footer */
+   height: 1000px;
+   padding: 10px;
+   padding-bottom: 60px;   /* Height of the footer */
 }
 
 #footer {
