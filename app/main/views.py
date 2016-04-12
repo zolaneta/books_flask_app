@@ -9,6 +9,7 @@ from flask.ext.login import current_user, logout_user, login_user
 
 
 
+
 @app.route('/image-upload/', methods=['GET', 'POST'])
 def image_upload():
     if request.method == 'POST':
