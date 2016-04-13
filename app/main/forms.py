@@ -42,6 +42,7 @@ class LoginForm(Form):
             self.username.errors.append("Invalid username or password")
             return False
 
+
 class ImageForm(Form):
     file = FileField('Image file')
 

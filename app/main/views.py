@@ -20,12 +20,20 @@ def image_upload():
             filename = os.path.join(app.config['IMAGES_DIR'], secure_filename(image_file.filename))
             image_file.save(filename)
             flash('Saved %s' % os.path.basename(filename), 'success')
-            return redirect(url_for('entries.index'))
-        else:
-            form = ImageForm()
-        return render_template('entries/image_upload.html', form=form)
+            return redirect(url_for('image_upload', filename=filename))
+        #else:
+            #form = ImageForm()
+        #return render_template('image_upload.html', form=form)
 
-
+    return '''
+        <!doctype html>
+        <title>Upload new File</title>
+        <h1>Upload new File</h1>
+        <form action="" method=post enctype=multipart/form-data>
+          <p><input type=file name=file>
+             <input type=submit value=Upload>
+        </form>
+        '''
 
 
 
