@@ -15,7 +15,10 @@ def image_upload():
     if request.method == 'POST':
         form = ImageForm(request.form)
         if form.validate():
+            print "1"
             image_file = request.files['file']
+            print"2"
+            print image_file
 
             filename = os.path.join(app.config['IMAGES_DIR'], secure_filename(image_file.filename))
             image_file.save(filename)
