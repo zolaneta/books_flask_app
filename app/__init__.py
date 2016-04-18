@@ -28,3 +28,7 @@ def load_user(user_id):
 
 from .main import main as main_blueprint
 app.register_blueprint(main_blueprint, url_prefix='/main')
+
+
+UPLOAD_FOLDER = '/home/bot/PycharmProjects/books_flask_app/app/static/images'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER

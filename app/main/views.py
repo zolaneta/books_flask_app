@@ -10,33 +10,32 @@ from flask.ext.login import current_user, logout_user, login_user
 
 
 
+def allowed_file(filename):
+    ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+
 @app.route('/image-upload/', methods=['GET', 'POST'])
-def image_upload():
+def upload_file():
     if request.method == 'POST':
-        form = ImageForm(request.form)
-        if form.validate():
-            print "1"
-            image_file = request.files['file']
-            print"2"
-            print image_file
-
-            filename = os.path.join(app.config['IMAGES_DIR'], secure_filename(image_file.filename))
-            image_file.save(filename)
-            flash('Saved %s' % os.path.basename(filename), 'success')
-            return redirect(url_for('image_upload', filename=filename))
-        #else:
-            #form = ImageForm()
-        #return render_template('image_upload.html', form=form)
-
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('upload_file',
+                                    filename=filename))
     return '''
-        <!doctype html>
-        <title>Upload new File</title>
-        <h1>Upload new File</h1>
-        <form action="" method=post enctype=multipart/form-data>
-          <p><input type=file name=file>
-             <input type=submit value=Upload>
-        </form>
-        '''
+    <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+    '''
+
+
 
 
 
