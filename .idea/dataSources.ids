@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Sqlite (Xerial) - app.db" uuid="9d046d6c-9fc3-4d7f-bcb2-b1610a0a261a">
-    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
-    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
-    <schema name="" catalog=""/>
-    <table name="alembic_version" schema="" catalog="" type="TABLE">
-      <column name="version_num" sqlType="VARCHAR(32)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-    </table>
-    <table name="books" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="title" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="author" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="category" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <primary-key columns="id"/>
-    </table>
-    <table name="users" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="username" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="email" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="password_hash" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="ix_users_username" unique="true" columns="username"/>
-    </table>
+  <data-source name="Sqlite (Xerial) - app.db" uuid="c7e04e11-70b1-4e78-85f1-1555f71de858">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

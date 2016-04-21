@@ -8,7 +8,7 @@ from flask import current_app
 class Book(db.Model):
     __tablename__ = "books"
     id = db.Column('id', db.Integer, primary_key=True)
-    title = db.Column(db.String(128))
+    title = db.Column(db.String(256))
     author = db.Column(db.String(128))
     category = db.Column(db.String(128))
 
