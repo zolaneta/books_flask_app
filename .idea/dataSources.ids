@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Sqlite (Xerial) - app.db" uuid="c7e04e11-70b1-4e78-85f1-1555f71de858">
+  <data-source name="app" uuid="aa1ed265-0142-4b6f-a5c1-cb4ede1e614c">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>
