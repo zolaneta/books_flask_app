@@ -46,7 +46,7 @@ def category(category=None):
     return render_template(
         'category.html',
         category=category, # goes into {{category}}
-        #books=Book.query.all(),
+        books=Book.query.all(),
         # Query for list of categories (BROWSE BY CATEGORIES)
         categories=Book.query.distinct(Book.category).group_by(Book.category),
         # Query for list of books in specific categories
