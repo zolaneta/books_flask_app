@@ -25,16 +25,7 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('upload_file',
                                     filename=filename))
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form action="" method=post enctype=multipart/form-data>10
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-    '''
-
+    return render_template('image_upload.html')
 
 
 
@@ -79,6 +70,13 @@ def book(id=None):
 @app.route('/new-book', methods=['GET', 'POST'])
 def new_book():
     if request.method == 'POST':
+        # picture loader
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+
         book = Book(title=request.form['title'], author=request.form['author'], category=request.form['category'])
         db.session.add(book)
         db.session.commit()
