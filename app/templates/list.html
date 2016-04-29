@@ -2,26 +2,19 @@
 
 {% block content %}
 <h3>Books Books Books</h3>
-      <img src="/images/1.jpg" alt="pic1"/>
+
     <h3>List of our books</h3>
 
 <div class="main">
 
     <div class="list">
        <table>
-           <tr>
-               <th>#</th>
-               <th>Title</th>
-               <th>Author</th>
-               <th>Category</th>
 
-           </tr>
            {% for book in books %}
                <tr>
-                   <td id ="first_column">{{ loop.index }} </td>
-                   <td id ="second_column"><a href=/title/{{ book.id}}>{{ book.title }}<img src="/images/{{ book.id}}.jpg" alt="pic1"/></a></td>
-                   <td id ="third_column">{{ book.author }}</td>
-                   <td id ="forth_column">{{ book.category }}</td>
+
+                   <a href=/title/{{ book.id}}><img src="/images/{{ book.id}}.jpg" alt="pic1"/></a>
+
 
                </tr>
            {% endfor %}

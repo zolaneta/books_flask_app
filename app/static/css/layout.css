@@ -12,15 +12,15 @@ body {
 
 .main{
     display: flex;
-    height: 800px;
+    height: 1000px;
     position:relative;
 }
 
 .list{
-    background-color: #f0f1fd;
-    width: 900px;
+    background-color: pink;
+    width: 1000px;
+    height: 1000px;
     border: 1px solid lightgray;
-    border-radius: 5px;
     padding-top: 5px;
     padding-left: 15px;
     padding-bottom: 20px;
@@ -49,7 +49,7 @@ body {
 }
 
 #body {
-   height: 1000px;
+   height: 1200px;
    padding: 10px;
    padding-bottom: 60px;   /* Height of the footer */
 }
