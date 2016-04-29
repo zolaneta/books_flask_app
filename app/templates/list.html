@@ -19,7 +19,7 @@
            {% for book in books %}
                <tr>
                    <td id ="first_column">{{ loop.index }} </td>
-                   <td id ="second_column"><a href=/title/{{ book.id}}>{{ book.title }}</a><img src="/images/{{ book.id}}.jpg" alt="pic1"/></td>
+                   <td id ="second_column"><a href=/title/{{ book.id}}>{{ book.title }}<img src="/images/{{ book.id}}.jpg" alt="pic1"/></a></td>
                    <td id ="third_column">{{ book.author }}</td>
                    <td id ="forth_column">{{ book.category }}</td>
 
