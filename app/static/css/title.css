@@ -1,0 +1,26 @@
+#top{
+
+
+    background-color: darkslategray;
+    height: 90px;
+    width: 1200px
+}
+#top1{
+position: relative;
+    background-color: lightgreen;
+    height: 90px;
+    width: 400px;
+}
+#top2{
+position: relative;
+    left: 400px;
+    background-color: greenyellow;
+    height: 90px;
+    width: 400px;
+}
+#top3{
+position: relative;
+    background-color: yellow;
+    height: 90px;
+    width: 400px;
+}
