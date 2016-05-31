@@ -8,6 +8,13 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/title.css') }}">
 
 
+<div id="main-left"></div>
+
+<div id="main">
+
+
+
+
     <div id="top">
         <div id="top1"></div>
         <div id="top2">Reading great books makes your brain sharp!!!</div>
@@ -16,6 +23,16 @@
 
 
 
+
+    <div id="book">
+        <div id="book1"></div>
+        <div id="book2"><img src="/images/{{ specific_book.id}}.jpg" alt="pic1"/></div>
+        <div id="book3">Rating</div>
+
+    </div>
+
+
+<!--
 
          <table>
             <tr>
@@ -29,9 +46,9 @@
 
         </table>
 
+-->
 
 
-    <div class="side_bar">
         <h4>BROWSE BY CATEGORIES</h4>
         <table>
 
@@ -41,11 +58,15 @@
                   <td><a href="/category/{{ item.category }}"> {{ item.category }} </a> </td>
                       {#  {{ item.category }} becomes <category> in the view #}
                </tr>
+
            {% endfor %}
+
         </table>
-    </div>
 
 
+</div>
+
+<div id="main-right"></div>
 
 
         {% endblock %}

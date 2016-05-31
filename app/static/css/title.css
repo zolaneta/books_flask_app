@@ -1,26 +1,78 @@
+#main-left{
+
+    background-color: dodgerblue;
+    width: 150px;
+    height: 1100px;
+}
+
+
+#main{
+    position: relative;
+    left: 150px;
+    bottom: 1100px;
+    background-color: pink;
+    width: 1200px;
+    height: 1100px;
+   padding: 10px;
+   padding-bottom: 60px;   /* Height of the footer */
+
+}
+#main-right {
+position: relative;
+    background-color: deeppink;
+  bottom: 2200px;
+ left: 1352px;
+
+    width: 150px;
+    height: 1100px;
+}
+
 #top{
-
-
     background-color: darkslategray;
+    padding: 10px;
     height: 90px;
-    width: 1200px
+    width: 1200px;
 }
 #top1{
-position: relative;
+    position: relative;
     background-color: lightgreen;
     height: 90px;
     width: 400px;
 }
 #top2{
-position: relative;
+    position: relative;
+    bottom: 90px;
     left: 400px;
     background-color: greenyellow;
     height: 90px;
     width: 400px;
 }
 #top3{
-position: relative;
+    position: relative;
+    bottom: 180px;
+    left: 800px;
     background-color: yellow;
     height: 90px;
     width: 400px;
+}
+
+#book{
+    background-color: darkred;
+    height: 400px;
+    width: 180px;
+}
+#book1{
+    background-color: orange;
+    height: 60px;
+    width: 180px;
+}
+#book2{
+    background-color: cornflowerblue;
+    height: 240px;
+    width: 180px;
+}
+#book3{
+    background-color: purple;
+    height: 90px;
+    width: 180px;
 }
