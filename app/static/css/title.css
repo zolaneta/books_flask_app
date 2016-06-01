@@ -1,11 +1,8 @@
 #main-left{
-
     background-color: dodgerblue;
     width: 150px;
     height: 1100px;
 }
-
-
 #main{
     position: relative;
     left: 150px;
@@ -13,23 +10,21 @@
     background-color: pink;
     width: 1200px;
     height: 1100px;
-   padding: 10px;
-   padding-bottom: 60px;   /* Height of the footer */
+    padding: 10px;
+    padding-bottom: 60px;   /* Height of the footer */
 
 }
 #main-right {
-position: relative;
+    position: relative;
     background-color: deeppink;
-  bottom: 2200px;
- left: 1352px;
-
+    bottom: 2200px;
+    left: 1352px;
     width: 150px;
     height: 1100px;
 }
-
 #top{
     background-color: darkslategray;
-    padding: 10px;
+
     height: 90px;
     width: 1200px;
 }
@@ -55,7 +50,6 @@ position: relative;
     height: 90px;
     width: 400px;
 }
-
 #book{
     background-color: darkred;
     height: 400px;
@@ -75,4 +69,12 @@ position: relative;
     background-color: purple;
     height: 90px;
     width: 180px;
+}
+#info{
+    position: relative;
+    background-color: #8c8c8c;
+    height: 390px;
+    width: 580px;
+    left: 190px;
+    bottom: 390px;
 }
