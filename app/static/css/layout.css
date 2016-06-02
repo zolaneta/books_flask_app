@@ -3,6 +3,7 @@ body {
    margin:0;
    padding:0;
    height:100%;
+
 }
 
 #container {
@@ -26,6 +27,8 @@ body {
     padding-top: 5px;
     padding-left: 15px;
     padding-bottom: 20px;
+
+
 }
 
 #first_column{
@@ -52,17 +55,20 @@ body {
 
 #body {
    height: 1200px;
-   padding: 10px;
-   padding-bottom: 60px;   /* Height of the footer */
+
+
 }
 
 #footer {
-   position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-   color: grey;
-   font-size: 12px;
+
+    bottom: 0;
+    width: 1200px;
+    height: 30px; /* Height of the footer */
+    color: grey;
+    font-size: 12px;
+
+    margin-left:auto;
+    margin-right:auto;
 }
 
 img{

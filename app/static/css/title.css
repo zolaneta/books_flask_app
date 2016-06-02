@@ -1,30 +1,18 @@
-#main-left{
-    background-color: dodgerblue;
-    width: 150px;
-    height: 1100px;
-}
 #main{
-    position: relative;
-    left: 150px;
+
     bottom: 1100px;
     background-color: pink;
     width: 1200px;
     height: 1100px;
-    padding: 10px;
-    padding-bottom: 60px;   /* Height of the footer */
 
+
+    margin-left:auto;
+    margin-right:auto; /* the page is positioned in the middle */
 }
-#main-right {
-    position: relative;
-    background-color: deeppink;
-    bottom: 2200px;
-    left: 1352px;
-    width: 150px;
-    height: 1100px;
-}
+
+
 #top{
     background-color: darkslategray;
-
     height: 90px;
     width: 1200px;
 }
@@ -41,6 +29,7 @@
     background-color: greenyellow;
     height: 90px;
     width: 400px;
+    text-align: center;
 }
 #top3{
     position: relative;
@@ -51,7 +40,7 @@
     width: 400px;
 }
 #book{
-    background-color: darkred;
+    background-color: floralwhite;
     height: 400px;
     width: 180px;
 }
@@ -61,12 +50,12 @@
     width: 180px;
 }
 #book2{
-    background-color: cornflowerblue;
-    height: 240px;
+    background-color: orangered;
+    height: 250px;
     width: 180px;
 }
 #book3{
-    background-color: purple;
+    background-color: lightcoral;
     height: 90px;
     width: 180px;
 }
@@ -74,7 +63,44 @@
     position: relative;
     background-color: #8c8c8c;
     height: 390px;
-    width: 580px;
+    width: 700px;
     left: 190px;
     bottom: 390px;
+    font-family: Times;
+
+    
+}
+#info1{
+    position: relative;
+    background-color: #b9def0;
+    height: 50px;
+    width: 700px;
+}
+#info2{
+    position: relative;
+    background-color: aliceblue;
+    height: 130px;
+    width: 700px;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+#info3{
+    position: relative;
+    background-color: blanchedalmond;
+    height: 90px;
+    width: 700px;
+    font-size: 20px;
+}
+#info4{
+    position: relative;
+    background-color: cornflowerblue;
+    height: 40px;
+    width: 700px;
+}
+#info5{
+    position: relative;
+    background-color: darkorange;
+    height: 80px;
+    width: 700px;
 }
