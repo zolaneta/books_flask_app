@@ -30,6 +30,7 @@
     height: 90px;
     width: 400px;
     text-align: center;
+
 }
 #top3{
     position: relative;
@@ -67,8 +68,6 @@
     left: 190px;
     bottom: 390px;
     font-family: Times;
-
-    
 }
 #info1{
     position: relative;
@@ -83,7 +82,6 @@
     width: 700px;
     font-weight: bold;
     font-size: 30px;
-
 }
 #info3{
     position: relative;
@@ -103,4 +101,30 @@
     background-color: darkorange;
     height: 80px;
     width: 700px;
+}
+#ads{
+    position: relative;
+    background-color: palegreen;
+    height: 850px;
+    width: 300px;
+    left: 895px;
+    bottom: 790px;
+}
+#ads1{
+    position: relative;
+    background-color: purple;
+    height: 400px;
+    width: 300px;
+}
+#ads2{
+    position: relative;
+    background-color: hotpink;
+    height: 300px;
+    width: 300px;
+}
+#ads3{
+    position: relative;
+    background-color: deeppink;
+    height: 150px;
+    width: 300px;
 }
