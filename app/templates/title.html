@@ -51,18 +51,41 @@
 
            {% endfor %}
 
+         </table>
+         </div>
+         <div id="ads2"></div>
+         <div id="ads3"></div>
+    </div>
+
+
+    <div id="space"></div>
+
+    <div id="others">
+        <div id="others1">OTHER BOOKS IN THIS CATEGORY</div>
+
+        <div id="others2">
+
+            <table>
+
+           {% for book in books %}
+               <tr>
+
+                   <a href=/title/{{ book.id}}><img src="/images/{{ book.id}}.jpg" alt="pic1"/></a>
+
+##TODO ADD QUERY OF 9 FIRST BOOK OF THE SAME CATEGORY AS THE BOOK
+
+
+
+               </tr>
+           {% endfor %}
         </table>
 
 
 
-         </div>
-         <div id="ads2"></div>
-         <div id="ads3">
+        </div>
 
-
-
-         </div>
     </div>
+
 
 <!--
 
