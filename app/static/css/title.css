@@ -30,6 +30,8 @@
     height: 90px;
     width: 400px;
     text-align: center;
+    font-size: 30px;
+    border: black ;
 
 }
 #top3{
@@ -105,7 +107,7 @@
 #ads{
     position: relative;
     background-color: palegreen;
-    height: 850px;
+    height: 995px;
     width: 300px;
     left: 895px;
     bottom: 790px;
@@ -125,6 +127,39 @@
 #ads3{
     position: relative;
     background-color: deeppink;
-    height: 150px;
+    height: 295px;
     width: 300px;
+}
+#space{
+    position: relative;
+    background-color: lightseagreen;
+    height: 320px;
+    width: 890px;
+    bottom: 1390px;
+}
+#others{
+    position: relative;
+    background-color: greenyellow;
+    height: 270px;
+    width: 890px;
+    bottom: 1380px;
+}
+#others1{
+    position: relative;
+    background-color: darkgrey;
+    height: 40px;
+    width: 890px;
+    font-size: 15px;
+    font-weight: bold;
+}
+#others2{
+    position: relative;
+    background-color: cornflowerblue;
+    height: 230px;
+    width: 890px;
+}
+#others img {
+    width: 95px;
+    height: 160px;
+
 }

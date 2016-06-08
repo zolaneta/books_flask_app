@@ -60,11 +60,15 @@ def book(id=None):
         'title.html',
         id=id,
         books=Book.query.all(),
+        # Query for list of categories (BROWSE BY CATEGORIES)
         categories=Book.query.distinct(Book.category).group_by(Book.category),
         # Query for specific book id
-        specific_book=Book.query.filter_by(id=id).first()
-    )
+        specific_book=Book.query.filter_by(id=id).first(),
 
+
+        category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id).first()).category).all()
+
+    )
 
 
 @app.route('/new-book', methods=['GET', 'POST'])
@@ -75,8 +79,6 @@ def new_book():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-
         book = Book(title=request.form['title'], author=request.form['author'], category=request.form['category'])
         db.session.add(book)
         db.session.commit()

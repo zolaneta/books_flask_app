@@ -58,29 +58,29 @@
     </div>
 
 
-    <div id="space"></div>
+    <div id="space">{{ specific_book.category }} {{ specific_book.id }} </div>
+
+
 
     <div id="others">
         <div id="others1">OTHER BOOKS IN THIS CATEGORY</div>
 
         <div id="others2">
 
-            <table>
+           <table>
 
-           {% for book in books %}
+           {% for item in category_books %}
                <tr>
 
-                   <a href=/title/{{ book.id}}><img src="/images/{{ book.id}}.jpg" alt="pic1"/></a>
 
-##TODO ADD QUERY OF 9 FIRST BOOK OF THE SAME CATEGORY AS THE BOOK
+                   <td><a href=/title/{{ item.id }}><img src="/images/{{ item.id}}.jpg" alt="pic1"/></a></td>
+
 
 
 
                </tr>
            {% endfor %}
         </table>
-
-
 
         </div>
 
