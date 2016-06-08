@@ -64,12 +64,10 @@ def book(id=None):
         categories=Book.query.distinct(Book.category).group_by(Book.category),
         # Query for specific book id
         specific_book=Book.query.filter_by(id=id).first(),
-
-
-        category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id).first()).category).all()
-
+        # Query for displaying books in the same category as the specific book (OTHER BOOKS IN THIS CATEGORY)
+        category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id).first()).category).limit(9)
+                                                        # {{specific_book.category}}
     )
-
 
 @app.route('/new-book', methods=['GET', 'POST'])
 def new_book():
