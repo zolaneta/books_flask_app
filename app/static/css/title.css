@@ -1,16 +1,12 @@
 #main{
-
     bottom: 1100px;
     background-color: pink;
     width: 1200px;
     height: 1100px;
 
-
     margin-left:auto;
     margin-right:auto; /* the page is positioned in the middle */
 }
-
-
 #top{
     background-color: darkslategray;
     height: 90px;

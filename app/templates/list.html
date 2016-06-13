@@ -1,13 +1,23 @@
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/list.css') }}">
+
 {% extends 'layout.html' %}
 
-{% block content %}
-<h3>Books Books Books</h3>
 
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/list.css') }}">
+
+
+
+
+
+<div id="main">
+
+    <h3>Books Books Books</h3>
     <h3>List of our books</h3>
 
-<div class="main">
-
-    <div class="list">
+    <div id="list">
        <table>
 
            {% for book in books %}
