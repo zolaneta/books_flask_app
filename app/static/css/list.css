@@ -7,3 +7,32 @@
     margin-left:auto;
     margin-right:auto; /* the page is positioned in the middle */
 }
+
+img {
+    width: 140px;
+    height: 220px;
+    padding: 2px;
+}
+#top{
+    background-color: yellow;
+    height: 100px;
+    width: 1200px;
+
+}
+#list{
+    background-color: #9acfea;
+    height: 900px;
+    width: 980px;
+    margin: 3px;
+}
+#side_bar{
+    position: relative;
+    background-color: darkseagreen;
+    height: 600px;
+    width: 220px;
+    left: 985px;
+    bottom: 910px;
+}
+
+
+
