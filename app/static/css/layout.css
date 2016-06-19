@@ -5,10 +5,8 @@ body {
    height:100%;
 
 }
-#container {
-   min-height:100%;
-   position:relative;
-}
+
+
 .main{
     display: flex;
     height: 1000px;

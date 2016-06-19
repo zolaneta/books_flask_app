@@ -53,6 +53,39 @@ def category(category=None):
         category_list=Book.query.filter_by(category=category).all()  # grabs <category>
     )
 
+
+@app.route('/title/<id>', methods=['GET', 'POST'])
+def book(id=None):
+    book = Book.query.get_or_404(id)
+    related = Book.query.filter(Book.query.filter_by(id=id).first() != id, Book.category == book.category)
+
+##TODO work on querry where specific book is not included
+
+    return render_template(
+        'title.html',
+        id=id,
+        book=book,
+        related=related,
+
+
+        books=Book.query.all(),
+        # Query for list of categories (BROWSE BY CATEGORIES)
+        categories=Book.query.distinct(Book.category).group_by(Book.category),
+        # Query for specific book id
+        specific_book=Book.query.filter_by(id=id).first(),
+        # Query for displaying books in the same category as the specific book (OTHER BOOKS IN THIS CATEGORY)
+        category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id) .first()).category).limit(9),
+                                                        # {{specific_book.category}}
+        ### category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id).first()).category).limit(9)
+
+    )
+
+
+
+
+
+
+'''
 @app.route('/title')
 @app.route('/title/<id>', methods=['GET', 'POST'])
 def book(id=None):
@@ -67,7 +100,16 @@ def book(id=None):
         # Query for displaying books in the same category as the specific book (OTHER BOOKS IN THIS CATEGORY)
         category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id).first()).category).limit(9)
                                                         # {{specific_book.category}}
+
+
+
+
+
+        ### category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id).first()).category).limit(9)
     )
+'''
+
+
 
 @app.route('/new-book', methods=['GET', 'POST'])
 def new_book():
