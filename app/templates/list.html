@@ -16,9 +16,18 @@
     <div id="top">
     <h3>Books Books Books</h3>
     <h3>List of our books</h3>
+
         <script type="text/javascript">
-            // document.write('hey now brown cow');
+            function thanks(){
+                var s = "for..."
+                alert("Thank You"+ s)
+            }
         </script>
+        <form>
+            <input type="button" value="sign up" onclick="thanks()">
+        </form>
+
+
     </div>
     <div id="list">
        <table>
@@ -27,6 +36,7 @@
                <tr>
 
                    <a href=/title/{{ book.id}}><img src="/images/{{ book.id}}.jpg" alt="pic1"/></a>
+
 
 
                </tr>

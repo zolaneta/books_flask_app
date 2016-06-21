@@ -3,6 +3,11 @@
 
 
 {% from "_formhelpers.html" import render_field %}
+    <script type="text/javascript">
+            function thanks(){
+                alert("Thank You")
+            }
+        </script>
 <form method='post' action="/register">Sign Up, It's free!
   <dl>
     {{ render_field(form.username) }}
@@ -11,7 +16,12 @@
     {{ render_field(form.confirm) }}
 
   </dl>
-<p><input type=submit value="Sign Up">
+<p>
+
+
+
+    <input type=submit value="Sign Up" onclick="thanks()">
 </form>
+
 
 {% endblock %}

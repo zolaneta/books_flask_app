@@ -55,9 +55,10 @@ def category(category=None):
 
 
 @app.route('/title/<id>', methods=['GET', 'POST'])
-def book(id=None):
+def book(id):
     book = Book.query.get_or_404(id)
     related = Book.query.filter(Book.query.filter_by(id=id).first() != id, Book.category == book.category)
+    category_books = Book.query.filter_by(category=(Book.query.filter_by(id=id).first()).category !=id)
 
 ##TODO work on querry where specific book is not included
 
@@ -74,7 +75,7 @@ def book(id=None):
         # Query for specific book id
         specific_book=Book.query.filter_by(id=id).first(),
         # Query for displaying books in the same category as the specific book (OTHER BOOKS IN THIS CATEGORY)
-        category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id) .first()).category).limit(9),
+        category_books=category_books
                                                         # {{specific_book.category}}
         ### category_books=Book.query.filter_by(category=(Book.query.filter_by(id=id).first()).category).limit(9)
 
