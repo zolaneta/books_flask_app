@@ -21,5 +21,8 @@ function show(){
     document.getElementById("top2").style.visibility = "visible";
 }
 
-setTimeout(disapear, 7000);
-setTimeout(show, 8000);
+///setTimeout(disapear, 7000);
+///setTimeout(show, 8000);
+
+setInterval("disapear()",  1000);
+setInterval("show()",  1100);
